@@ -8,20 +8,20 @@ primary key(id)
 select * from clientes;
 
 insert into clientes(nombre, apellido, direccion)
-values('Fernando Miguel', 'Corbalan', 'Moreno 512');
+values('Fernando M', 'Corbalan', 'Moreno 512');
 
 insert into clientes(nombre, apellido, direccion)
-values('Lucas Miguel', 'Corbalan Dip', 'Moreno 512');
+values('Lucas M', 'Corbalan Dip', 'Moreno 512');
 
 insert into clientes(nombre, apellido, direccion)
-values('Cintia Yael', 'Dip', 'Moreno 512');
+values('Cintia Y', 'Dip', 'Moreno 512');
 
 insert into clientes(nombre, apellido, direccion)
-values('Gonzalo Rafael', 'Corbalan Dip', '');
+values('Gonzalo R', 'Corbalan Dip', '');
 
 select nombre, apellido from clientes;
 select * from clientes where id = 3;
-update clientes set nombre = 'Fernando Miguel', direccion = 'Moreno 512 4to A'where id = 1;
+update clientes set nombre = 'Fernando M', direccion = 'Moreno 512 4to A'where id = 1;
 
 insert into clientes(nombre, apellido, direccion)
 values('Leon', 'Corbalan Dip', '');
