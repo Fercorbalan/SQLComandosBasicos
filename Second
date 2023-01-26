@@ -1,0 +1,43 @@
+create table productos2 (
+	id int not null auto_increment,
+    nombre varchar(50) not null,
+    created_by int not null,
+    marca varchar(50) not null,
+    cantidades int not null,
+    primary key(id),
+    foreign key(created_by) references usuario2(id)
+);
+
+rename table productos2 to productostotales2; -- renombra nombre de tabla Creada.
+
+insert into productostotales2 (nombre, created_by, marca, cantidades)
+values
+	('ipad', 1, 'Apple', 15),
+    ('Notebook', 2, 'Asus', 20),
+    ('Tablet', 3, 'Samsung', 26),
+    ('Monitor', 2, 'LG', 33),
+    ('Teclado', 1, 'Genius', 50);
+    
+select * from productostotales2;
+select u.id, u.email, p.nombre from usuario2 u left join productostotales2 p on u.id = p.created_by; -- Muestra los usuarios y que productos carg
+select u.id, u.email, p.nombre from usuario2 u right join productostotales2 p on u.id = p.created_by; -- 
+select u.id, u.email, p.nombre from usuario2 u inner join productostotales2 p on u.id = p.created_by;
+
+select count(id), marca from productostotales2 group by marca;
+select count(p.id), u.nombre from productostotales2 p left join usuario2 u on u.id = p.created_by group by p.created_by;
+
+select count(p.id), u.nombre from productostotales2 p left join usuario u
+on u.id = p.created_by group by p.created_by 
+having count(p.id) >=2;
+
+drop table productostotales2; -- ELIMINA LAS TABLAS
+drop table productostotales2; -- ELIMINA LAS TABLAS
+
+CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+  `id` INT NOT NULL,
+  `username` VARCHAR(16) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(32) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
