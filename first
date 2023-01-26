@@ -1,0 +1,38 @@
+create table clientes(
+id int(11) not null auto_increment,
+nombre varchar(69) not null,
+apellido varchar(60) not null,
+direccion varchar(80),
+primary key(id)
+);
+select * from clientes;
+
+insert into clientes(nombre, apellido, direccion)
+values('Fernando Miguel', 'Corbalan', 'Moreno 512');
+
+insert into clientes(nombre, apellido, direccion)
+values('Lucas Miguel', 'Corbalan Dip', 'Moreno 512');
+
+insert into clientes(nombre, apellido, direccion)
+values('Cintia Yael', 'Dip', 'Moreno 512');
+
+insert into clientes(nombre, apellido, direccion)
+values('Gonzalo Rafael', 'Corbalan Dip', '');
+
+select nombre, apellido from clientes;
+select * from clientes where id = 3;
+update clientes set nombre = 'Fernando Miguel', direccion = 'Moreno 512 4to A'where id = 1;
+
+insert into clientes(nombre, apellido, direccion)
+values('Leon', 'Corbalan Dip', '');
+
+select * from clientes;
+
+delete from clientes where id = 5; 
+
+select * from clientes;
+
+describe clientes;
+
+alter table clientes add email varchar(30);
+alter table clientes drop column email;
